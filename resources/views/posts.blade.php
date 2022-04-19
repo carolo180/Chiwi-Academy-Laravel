@@ -12,11 +12,14 @@
     <title>Home</title>
 </head>
 
+
 <body class="bg-[#EAEAEA] min-h-screen">
 
-    <x-header />
+   <x-header />
+   
     <x-nav />
-    <x-footer />
+    
+     <x-footer />
 
     
 
