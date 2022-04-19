@@ -11827,9 +11827,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-20 {
   height: 5rem;
 }
-.h-\[5rem\] {
-  height: 5rem;
-}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -11857,9 +11854,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-center {
   justify-content: center;
 }
-.justify-between {
-  justify-content: space-between;
-}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -11882,20 +11876,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
-
 .bg-\[\#000\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-.bg-\[\#141D30\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(20 29 48 / var(--tw-bg-opacity));
 }
 .p-6 {
   padding: 1.5rem;
@@ -11911,10 +11898,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -11924,13 +11907,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .align-baseline {
   vertical-align: baseline;
 }
-
-.align-middle {
-  vertical-align: middle;
-
 .font-AbhayaLibre {
   font-family: Abhaya Libre;
-
 }
 .text-sm {
   font-size: 0.875rem;
@@ -11940,17 +11918,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 .font-semibold {
   font-weight: 600;
