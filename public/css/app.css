@@ -460,6 +460,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
 }
@@ -468,6 +471,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .right-0 {
   right: 0px;
+}
+.bottom-0 {
+  bottom: 0px;
 }
 .m-0 {
   margin: 0px;
@@ -527,6 +533,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-16 {
   height: 4rem;
 }
+.h-14 {
+  height: 3.5rem;
+}
 .h-20 {
   height: 5rem;
 }
@@ -541,6 +550,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-auto {
   width: auto;
+}
+.w-full {
+  width: 100%;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -557,6 +569,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflow-hidden {
   overflow: hidden;
 }
+.border-2 {
+  border-width: 2px;
+}
 .border-t {
   border-top-width: 1px;
 }
@@ -564,9 +579,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
-.bg-\[\#FF5733\] {
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.bg-\[\#EAEAEA\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 87 51 / var(--tw-bg-opacity));
+  background-color: rgb(234 234 234 / var(--tw-bg-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -576,13 +595,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-.bg-\[\#1B001C\] {
+.bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(27 0 28 / var(--tw-bg-opacity));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 .bg-\[\#000\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-red-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
 }
 .p-6 {
   padding: 1.5rem;
@@ -607,6 +630,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .align-baseline {
   vertical-align: baseline;
 }
+.font-AbhayaLibre {
+  font-family: Abhaya Libre;
+}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -614,6 +640,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -655,10 +685,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-.text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -782,3 +808,4 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 2rem;
   }
 }
+

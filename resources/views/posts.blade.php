@@ -7,9 +7,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Home</title>
 </head>
-<body class="bg-[#FF5733]">
+<body class="bg-[#EAEAEA] min-h-screen">
 
    <x-header />
- 
+    <x-footer />
 </body>
 </html>

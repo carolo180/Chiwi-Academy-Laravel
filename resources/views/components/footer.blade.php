@@ -1,5 +1,5 @@
-<div class="w-full h-20 flex items-center">
-    <h1 class="text-3xl font-bold text-white">
-        Chiwi Academy
+<div class="h-14 w-full bg-red-900 text-center items-center bottom-0 absolute">
+    <h1 class="text-white text-2xl font-AbhayaLibre">
+        © Chiwi Acádemy - All rights reserve
     </h1>
 </div>
