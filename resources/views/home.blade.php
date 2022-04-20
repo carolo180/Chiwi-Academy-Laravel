@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+@section('title', 'Admin-Dashboard')
+@section('content_header')
+    <h1>Admin-Dashboard</h1>
+@stop
 
 @section('content')
 <div class="container">
@@ -14,7 +18,7 @@
                         </div>
                     @endif
 
-                    {{ __('Hola Mundo, Carol!, acabas de hacer un fantabuloso login') }}
+                    {{ __('Welcome to this beautiful admin panel') }}
                 </div>
             </div>
         </div>

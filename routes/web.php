@@ -13,10 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
- //   return view('welcome');
-//});
+//ruta del home 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//ruta detalle cada curso
+Route::get('/post', [App\Http\Controllers\HomeController::class, 'post'])->name('post');
+
+//ruta del login del admin
+Route::get('/home', function(){
+    return view("admin.categories.index");
+    //middleware especifica que esta vista debera ser autenticada
+})->middleware("auth");
+
+//rutas del administrador
+Route::get('/admin/categories', [App\Http\Controllers\Admin\CategoriesController::class, 'index'])->name('admin.categories');
 
 Auth::routes();
 
