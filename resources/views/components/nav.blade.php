@@ -1,5 +1,6 @@
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar">
+    <div class="botones-nav">
+        <a class="btnA" href="#"><i class="bi bi-person-fill sing"></i> Sing up</a>
+        <a class="btnA" href="#"><i class="bi bi-box-arrow-in-right"></i> Log in</a>
     </div>
 </nav>
