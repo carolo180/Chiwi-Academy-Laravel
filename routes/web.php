@@ -26,6 +26,7 @@ Route::get('/home', function(){
 
 //rutas del administrador
 Route::get('/admin/categories', [App\Http\Controllers\Admin\CategoriesController::class, 'index'])->name('admin.categories');
+Route::post('/admin/categories/store', [App\Http\Controllers\Admin\CategoriesController::class, 'store'])->name('admin.categories.store');
 
 Auth::routes();
 
