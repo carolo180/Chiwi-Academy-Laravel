@@ -11766,6 +11766,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bottom-0 {
   bottom: 0px;
 }
+.z-10 {
+  z-index: 10;
+}
+.float-right {
+  float: right;
+}
 .m-0 {
   margin: 0px;
 }
@@ -11935,9 +11941,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.5rem;
 }
 
-=======
-
-=======
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -12029,6 +12032,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+.text-\[\#44F3FA\] {
+  --tw-text-opacity: 1;
+  color: rgb(68 243 250 / var(--tw-text-opacity));
 }
 .text-white {
   --tw-text-opacity: 1;

@@ -16,4 +16,12 @@ class CategoriesController extends Controller
    {
      return view("admin.categories.index");
    }
+
+     // recibe como parametro la info proveniente del formulario del administrados
+    //y meniante un dd(vardumpdie)lo muestra todo
+   public function store(Request $request)
+   {
+    dd($request->category);
+    dd($request->all());
+   }
 }
