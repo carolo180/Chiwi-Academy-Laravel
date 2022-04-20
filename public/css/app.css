@@ -11934,7 +11934,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-<<<<<<< HEAD
+
+=======
+
 =======
 .py-5 {
   padding-top: 1.25rem;
@@ -11944,7 +11946,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
->>>>>>> ddd3932da939b5c27163f3095da5ea537f66f640
+
 .pt-8 {
   padding-top: 2rem;
 }
@@ -11966,13 +11968,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .align-baseline {
   vertical-align: baseline;
 }
-<<<<<<< HEAD
-=======
+
 
 .align-middle {
   vertical-align: middle;
 }
->>>>>>> ddd3932da939b5c27163f3095da5ea537f66f640
+
 .font-AbhayaLibre {
   font-family: Abhaya Libre;
 }
