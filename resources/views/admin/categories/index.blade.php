@@ -25,11 +25,10 @@
                 <table id="categories" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Created_at</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -146,8 +145,8 @@
                     {{ csrf_field() }}
                     <div class="modal-body">
                        <div class="form-group">
-                           <label for="category">Category</label>
-                           <input type="text" name="category" class="form-control" id="category">
+                           <label for="name">Category</label>
+                           <input type="text" name="name" class="form-control" id="category">
                        </div>
                     </div>
                     <div class="modal-footer justify-content-between">

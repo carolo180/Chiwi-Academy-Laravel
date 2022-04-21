@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Evento;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -14,6 +15,7 @@ class CategoriesController extends Controller
 
    public function index()
    {
+  
      return view("admin.categories.index");
    }
 
@@ -21,7 +23,14 @@ class CategoriesController extends Controller
     //y meniante un dd(vardumpdie)lo muestra todo
    public function store(Request $request)
    {
-    dd($request->category);
-    dd($request->all());
+     //  dd( \App\Models\Evento::all());
+   // dd($request->name);
+    //dd($request->all());
+    $newEvento = new Evento();
+    $newEvento->name = $request->name;
+    $newEvento->save();
+
+    //echo "The event $newEvento->name is already safe succesfully";
+    return redirect()->back();
    }
 }
