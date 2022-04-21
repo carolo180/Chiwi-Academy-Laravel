@@ -11847,6 +11847,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+<<<<<<< HEAD
+=======
+.mt-10 {
+  margin-top: 2.5rem;
+}
+>>>>>>> 9a19690e47f47898406241fb7b681fd0b1cee1ca
 .flex {
   display: flex;
 }
@@ -11972,6 +11978,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-0 {
   padding: 0px;
+}
+.p-4 {
+  padding: 1rem;
 }
 .py-4 {
   padding-top: 1rem;

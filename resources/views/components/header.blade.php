@@ -2,6 +2,5 @@
     <h1 class="text-3xl text-white font-AbhayaLibre font-bold">
         Chiwi Academy
     </h1>
-    
 </div>
 
