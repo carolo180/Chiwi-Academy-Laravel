@@ -4,8 +4,7 @@
    <!-- <link rel="stylesheet" href="/css/admin_custom.css"> -->
 @stop
 @section('content_header')
-<h1>
-    Categorías
+<h1>Events
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create-category">
         Crear
     </button>
@@ -18,109 +17,52 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Listado de categorías</h3>
+                    <h3 class="card-title">Events List</h3>
                 </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="categories" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
+                            <th>Id</th>
+                            <th>Name Event</th>
+                            <th>Date Event</th>
+                            <th>Description</th>
+                            <th>Created_at</th>
+                            <th>Updated_at</th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
+                        
                     </thead>
                     <tbody>
+                        @foreach($evento as $event)
                         <tr>
-                            <td>Trident</td>
-                            <td>Internet
-                            Explorer 4.0
+                            <td>{{$event->id}}</td>
+                            <td>{{$event->name}}</td>
+                            <td>{{$event->date}}</td>
+                            <td>{{$event->description}}</td>
+                            <td>{{$event->created_at}}</td>
+                            <td>{{$event->updaded_at}}</td>
+                            <td>
+                               <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-update-category-{{$event->id}}">Edit</button>
                             </td>
-                            <td>Win 95+</td>
-                            <td> 4</td>
-                            <td>X</td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet
-                            Explorer 5.0
+                            <td>
+                                <form action="{{ route('admin.categories.delete', $event->id) }}" method="POST">
+                                    {{ csrf_field() }}
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                                
                             </td>
-                            <td>Win 95+</td>
-                            <td>5</td>
-                            <td>C</td>
                         </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet
-                            Explorer 5.5
-                            </td>
-                            <td>Win 95+</td>
-                            <td>5.5</td>
-                            <td>A</td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet
-                            Explorer 6
-                            </td>
-                            <td>Win 98+</td>
-                            <td>6</td>
-                            <td>A</td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td>7</td>
-                            <td>A</td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>AOL browser (AOL desktop)</td>
-                            <td>Win XP</td>
-                            <td>6</td>
-                            <td>A</td>
-                        </tr>
-                        <tr>
-                            <td>Gecko</td>
-                            <td>Firefox 1.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td>1.7</td>
-                            <td>A</td>
-                        </tr>
-                        <tr>
-                            <td>Gecko</td>
-                            <td>Firefox 1.5</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                        </tr>
-                        <tr>
-                            <td>Gecko</td>
-                            <td>Firefox 2.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                        </tr>
-                        <tr>
-                            <td>Gecko</td>
-                            <td>Firefox 3.0</td>
-                            <td>Win 2k+ / OSX.3+</td>
-                            <td>1.9</td>
-                            <td>A</td>
-                        </tr>
+                        <!-- Update modal -->
+                           @include('admin.categories.modal-update-event')
+                            <!-- /.Update modal -->
+                        @endforeach
+                      
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
-                        </tr>
-                    </tfoot>
+                  
                 </table>
             </div>
             <!-- /.card-body -->
@@ -137,7 +79,7 @@
     <div class="modal-dialog">
         <div class="modal-content bg-default">
             <div class="modal-header">
-                <h4 class="modal-title">Crear Categoría</h4>
+                <h4 class="modal-title">Crear Evento</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
                 </div>
@@ -146,8 +88,10 @@
                     {{ csrf_field() }}
                     <div class="modal-body">
                        <div class="form-group">
-                           <label for="category">Category</label>
-                           <input type="text" name="category" class="form-control" id="category">
+                           <label for="name">Evento</label>
+                           <input type="text" placeholder="Name of the event" name="name" class="form-control" id="category">
+                           <input type="date" placeholder="Event date" name="date" class="form-control" id="date">
+                           <input type="text" placeholder="Description" name="description" class="form-control" id="description">
                        </div>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -162,6 +106,8 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+
 @endsection
 
 @section('js')
