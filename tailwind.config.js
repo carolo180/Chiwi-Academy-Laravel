@@ -352,6 +352,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      AbhayaLibre:['Abhaya Libre'],
       sans: [
         'ui-sans-serif',
         'system-ui',
@@ -367,6 +368,7 @@ module.exports = {
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
+        
       ],
       serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
