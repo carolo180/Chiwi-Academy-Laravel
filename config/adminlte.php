@@ -253,15 +253,15 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'CHIWI ACADEMY'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'EVENTS',
+            'url'  => '/admin/categories/index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'MASTERCLASSES',
+            'url'  => '/admin/cursos/index',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [

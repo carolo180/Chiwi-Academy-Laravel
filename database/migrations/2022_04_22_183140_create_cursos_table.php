@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ReorganizeFieldsToEventosTable extends Migration
+class CreateCursosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class ReorganizeFieldsToEventosTable extends Migration
      */
     public function up()
     {
-        Schema::table('eventos', function (Blueprint $table) {
-            //
+        Schema::create('cursos', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->date('date');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class ReorganizeFieldsToEventosTable extends Migration
      */
     public function down()
     {
-        Schema::table('eventos', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('cursos');
     }
 }
