@@ -1,4 +1,4 @@
-<nav class="  flex items-top justify-center md:justify-end  bg-gray-100 dark:bg-gray-900  sm:pt-0 ">
+<nav class="  flex items-top justify-center md:justify-end  bg-gray-900 sm:pt-0 ">
     @if (Route::has('login'))
     <div class="  top-0 right-0 px-6 py-3  sm:block">
         @auth

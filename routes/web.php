@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 //ruta del home 
@@ -20,13 +15,15 @@ Route::get('/post', [App\Http\Controllers\HomeController::class, 'post'])->name(
 
 //ruta del login del admin
 Route::get('/home', function(){
-    return view("admin.categories.index");
+    return redirect()->route("admin.categories.index");
     //middleware especifica que esta vista debera ser autenticada
 })->middleware("auth");
 
 //rutas del administrador
-Route::get('/admin/categories', [App\Http\Controllers\Admin\CategoriesController::class, 'index'])->name('admin.categories');
+Route::get('/admin/categories/index', [App\Http\Controllers\Admin\CategoriesController::class, 'index'])->name('admin.categories.index');
 Route::post('/admin/categories/store', [App\Http\Controllers\Admin\CategoriesController::class, 'store'])->name('admin.categories.store');
+Route::post('/admin/categories/{eventId}/update', [App\Http\Controllers\Admin\CategoriesController::class, 'update'])->name('admin.categories.update');
+Route::delete('/admin/categories/{eventId}/delete', [App\Http\Controllers\Admin\CategoriesController::class, 'delete'])->name('admin.categories.delete');
 
 Auth::routes();
 

@@ -14,8 +14,8 @@ class AddFieldsToEventosTable extends Migration
     public function up()
     {
         Schema::table('eventos', function (Blueprint $table) {
-            $table->date('event_date')->nullable()->before('created_at');;
-            $table->text('description')->nullable()->after('event_date');;
+            $table->date('event_date')->nullable()->before('created_at');
+            $table->text('description')->nullable()->after('event_date');
         });
     }
 

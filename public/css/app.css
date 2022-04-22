@@ -11847,12 +11847,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-5 {
   margin-bottom: 1.25rem;
 }
-<<<<<<< HEAD
-=======
 .mt-10 {
   margin-top: 2.5rem;
 }
->>>>>>> 9a19690e47f47898406241fb7b681fd0b1cee1ca
 .flex {
   display: flex;
 }
@@ -11972,6 +11969,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#000\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-gray-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 .p-6 {
   padding: 1.5rem;
