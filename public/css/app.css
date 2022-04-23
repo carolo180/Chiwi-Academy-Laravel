@@ -11954,8 +11954,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
-=======
 .bg-\[\#1F464F\] {
   --tw-bg-opacity: 1;
   background-color: rgb(31 70 79 / var(--tw-bg-opacity));
@@ -11968,7 +11966,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
->>>>>>> 4565a15079cf95a975936703939066497efb7768
 .bg-\[\#000\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
