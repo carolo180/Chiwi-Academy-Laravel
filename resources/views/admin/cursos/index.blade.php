@@ -5,7 +5,7 @@
 @stop
 @section('content_header')
 <h1>Masterclass
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create-curso">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-create-curso">
         Crear
     </button>
 </h1>
@@ -22,11 +22,11 @@
             <!-- /.table-header -->
             <div class="card-body">
                 <table id="cursos" class="table table-bordered table-striped">
-                    <thead>
+                    <thead class="bg-dark">
                         <tr>
                             <th>Id</th>
-                            <th>Name Masterclass</th>
-                            <th>Date Masterclass</th>
+                            <th>Name Class</th>
+                            <th>Date Class</th>
                             <th>Description</th>
                             <th>Created_at</th>
                             <th>Updated_at</th>
@@ -37,7 +37,7 @@
                         
                     </thead>
                     <!-- /.table-content -->
-                    <tbody>
+                    <tbody class="bg-gradient-light">
                         @foreach($cursos as $curso)
                         <tr>
                             <td>{{$curso->id}}</td>
@@ -49,7 +49,7 @@
                             <td> <img src="{{asset($curso->featured)}}" alt="{{$curso->name}}" 
                                 class="img-fluid img-thumbnail" width="100px"></td>
                             <td>
-                               <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" 
+                               <button type="button" class="btn btn-info btn-sm" data-toggle="modal" 
                                data-target="#modal-update-curso-{{$curso->id}}">Edit</button>
                             </td>
                             <td>

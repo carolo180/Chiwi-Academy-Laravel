@@ -24,7 +24,7 @@ class Events extends Component
      */
     public function render()
     {
-        $eventos = Evento::all();
+        $eventos = Evento::paginate(3);
          return view('components.events', ['eventos' => $eventos]);
         
     }

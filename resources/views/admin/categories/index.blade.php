@@ -5,7 +5,7 @@
 @stop
 @section('content_header')
 <h1>Events
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create-category">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-create-category">
         Crear
     </button>
 </h1>
@@ -22,7 +22,7 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="categories" class="table table-bordered table-striped">
-                    <thead>
+                    <thead class="bg-dark">
                         <tr>
                             <th>Id</th>
                             <th>Name Event</th>
@@ -36,7 +36,7 @@
                         </tr>
                         
                     </thead>
-                    <tbody>
+                    <tbody class="bg-gradient-light">
                         @foreach($evento as $event)
                         <tr>
                             <td>{{$event->id}}</td>
@@ -48,7 +48,7 @@
                             <td> <img src="{{asset($event->featured)}}" alt="{{$event->name}}" 
                                 class="img-fluid img-thumbnail" width="100px"></td>
                             <td>
-                               <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-update-category-{{$event->id}}">Edit</button>
+                               <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-update-category-{{$event->id}}">Edit</button>
                             </td>
                             <td>
                                 <form action="{{ route('admin.categories.delete', $event->id) }}" class="form_eliminar" method="POST">
