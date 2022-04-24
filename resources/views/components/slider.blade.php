@@ -1,56 +1,21 @@
-<section class="mt-10">
-<h2 class="text-center">OUR TOP TEN MASTERCLASS</h2>
+<section class="mt-14">
+<h4 class="text-center mb-14 underline underline-offset-4">OUR TOP TEN MASTERCLASS</h4>
 <div class="owl-container">
     <div class="owl-carousel owl-theme">
-        <div class="item">
+        @foreach ($cursos as $curso)
+                   <div class="item bg-black flex flex-col items-center">
                         <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/3.png" alt="">
+                            <picture class="h-44 w-auto">
+                                <img src="{{$curso->featured}}" alt="{{$curso->name}}">
+                            </picture>
+                           
                         </div>
-                        <h5 class="mb-0 text-center"><b>MASTERCLASS</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
+                        <h5 class="mb-0 text-center text-white"><b>{{$curso->name}}</b></h5>
+                        <button class="bg-gray-600 my-1 hover:bg-gray-200 hover:text-black text-amber-300 w-32 h-18 text-white rounded md:text-base">Watch More</button>
+                        <br>
                     </div>
-        <div class="item">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/3.png" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>MASTERCLASS</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
-                    </div>
-                    <div class="item">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/4.png" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>MASTERCLASS</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
-                    </div>
-                     <div class="item">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/5.png" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>MASTERCLASS</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
-                    </div>
-                     <div class="item">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/6.png" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>MASTERCLASS</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
-                    </div>
-                     <div class="item">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/7.png" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>MASTERCLASS</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
-                    </div>
-                     <div class="item">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/8.png" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>MASTERCLASS</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
-                    </div>
+         @endforeach
+     
     </div>
 </div>
 </section>

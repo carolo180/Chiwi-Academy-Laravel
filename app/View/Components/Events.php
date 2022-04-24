@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Evento;
 
 class Events extends Component
 {
@@ -23,6 +24,8 @@ class Events extends Component
      */
     public function render()
     {
-        return view('components.events');
+        $eventos = Evento::all();
+         return view('components.events', ['eventos' => $eventos]);
+        
     }
 }

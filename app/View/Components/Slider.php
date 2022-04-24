@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Curso;
 use Illuminate\View\Component;
 
 class Slider extends Component
@@ -23,6 +24,7 @@ class Slider extends Component
      */
     public function render()
     {
-        return view('components.slider');
+        $cursos = Curso::all();
+        return view('components.slider', ['cursos' => $cursos]);
     }
 }
