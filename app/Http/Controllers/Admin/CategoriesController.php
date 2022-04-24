@@ -55,6 +55,15 @@ class CategoriesController extends Controller
     $events->name = $request->name;
     $events->date = $request->date;
     $events->description = $request->description;
+
+    if($request->hasfile('featured')){
+      $file = $request->file('featured');
+      $destinationPath = 'images/featured/';
+      $filename = time() . '-' . $file->getClientOriginalName();
+      $uploadSucces = $request->file('featured')->move($destinationPath,$filename);
+      $events->featured = $destinationPath . $filename;
+    };
+    
     $events->save();
     return redirect()->back();
    }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Evento;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('posts');
+      $eventos = Evento::all();
+        return view('posts', ['eventos' => $eventos]);
     }
 
     public function post()

@@ -30,6 +30,7 @@
                             <th>Description</th>
                             <th>Created_at</th>
                             <th>Updated_at</th>
+                            <th>Images</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
@@ -46,7 +47,6 @@
                             <td>{{$event->updated_at}}</td>
                             <td> <img src="{{asset($event->featured)}}" alt="{{$event->name}}" 
                                 class="img-fluid img-thumbnail" width="100px"></td>
-                            <td>
                             <td>
                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-update-category-{{$event->id}}">Edit</button>
                             </td>

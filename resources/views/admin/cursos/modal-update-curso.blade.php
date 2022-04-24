@@ -21,7 +21,7 @@
                                                     <input type="text" placeholder="Description" name="description" class="form-control" id="description" value="{{$curso->description}}">
                                                   
                                                     <label for="featured">Masterclass Image</label>
-                                                    <input type="file" placeholder="Upload Materclass image" name="featured" class="form-control" id="date" value="{{$curso->featured}}">
+                                                    <input type="file" placeholder="Upload Materclass image" name="featured" class="form-control" id="featured">
                                                 </div>
                                                 </div>
                                                 <div class="modal-footer justify-content-between">

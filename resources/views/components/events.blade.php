@@ -1,23 +1,18 @@
 <section class="container-fluid content">
         <!-- Categorías -->
-        <div class="row justify-content-center">
-            <div class="col-10 col-md-12">
-                <nav class="text-center my-5">
-                    <a href="#" class="mx-3 pb-3 link-category d-block d-md-inline selected-category" >Todas</a>
-                    <a href="#" class="mx-3 pb-3 link-category d-block d-md-inline" >Programación</a>
-                    <a href="#" class="mx-3 pb-3 link-category d-block d-md-inline" >Desarrollo web</a>
-                </nav>
-            </div>
-        </div>
+  
 
         <!-- Posts -->
         <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-10 justify-content-center">
+                <h1 class="justify-content-center">Our Events</h1>
                 <div class="row">
                     <!-- Post 1 -->
+
+                    @foreach ($eventos as $evento)
                     <div class="col-md-4 col-12 justify-content-center mb-5">
                         <div class="card m-auto" style="width: 18rem;">
-                            <img class="card-img-top" src="{{asset('images/3.png')}}" alt="Post Python">
+                            <img class="card-img-top" src="{{asset('images/featured/'.$evento->featured)}}" alt="{{$evento->name}}">
                             <div class="card-body">
                                 <small class="card-txt-category">Categoría: Programación</small>
                                 <h5 class="card-title my-2">Aprende Python en un dos tres</h5>
@@ -39,6 +34,9 @@
                             </div>
                         </div>
                     </div>
+                        
+                    @endforeach
+                
                     <!-- Post 2 -->
                     <div class="col-md-4 col-12 justify-content-center mb-5">
                         <div class="card m-auto" style="width: 18rem;">
