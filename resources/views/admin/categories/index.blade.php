@@ -43,12 +43,15 @@
                             <td>{{$event->date}}</td>
                             <td>{{$event->description}}</td>
                             <td>{{$event->created_at}}</td>
-                            <td>{{$event->updaded_at}}</td>
+                            <td>{{$event->updated_at}}</td>
+                            <td> <img src="{{asset($event->featured)}}" alt="{{$event->name}}" 
+                                class="img-fluid img-thumbnail" width="100px"></td>
+                            <td>
                             <td>
                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-update-category-{{$event->id}}">Edit</button>
                             </td>
                             <td>
-                                <form action="{{ route('admin.categories.delete', $event->id) }}" method="POST">
+                                <form action="{{ route('admin.categories.delete', $event->id) }}" class="form_eliminar" method="POST">
                                     {{ csrf_field() }}
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm">Delete</button>
@@ -79,19 +82,26 @@
     <div class="modal-dialog">
         <div class="modal-content bg-default">
             <div class="modal-header">
-                <h4 class="modal-title">Crear Evento</h4>
+                <h4 class="modal-title">Create Event</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
                 </div>
 
-                <form action="{{ route('admin.categories.store') }}" method="POST">
+                <form action="{{ route('admin.categories.store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="modal-body">
                        <div class="form-group">
-                           <label for="name">Evento</label>
+                           <label for="name">Event</label>
                            <input type="text" placeholder="Name of the event" name="name" class="form-control" id="category">
+                         
+                           <label for="date">Event's Date</label>
                            <input type="date" placeholder="Event date" name="date" class="form-control" id="date">
+                          
+                           <label for="description">Event's Featured</label>
                            <textarea type="text" placeholder="Description" name="description" class="form-control" id="description"></textarea>
+                           
+                           <label for="featured">Event's Image</label>
+                           <input type="file" placeholder="Upload Event image" name="featured" class="form-control" id="image">
                        </div>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -114,8 +124,40 @@
 <script>
 $(document).ready(function() {
     $('#categories').DataTable( {
-        "order": [[ 3, "desc" ]]
+        "order": [[ 3, "desc" ]],
+        paging: true,
+        scrollX: 900
     } );
-} );
+});
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+    $('.form_eliminar').submit(function(e){
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+
+            this.submit()
+            Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+            )
+            }
+            })
+    });
+  
 </script>
 @stop
+

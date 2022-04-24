@@ -23,14 +23,23 @@ class CategoriesController extends Controller
     // recibe como parametro la info proveniente del formulario del administrador
    public function store(Request $request)
    {
-    
-    //y mediante un dd(vardumpdie)lo muestra todo
+     //y mediante un dd(vardumpdie)lo muestra todo
      //  dd( \App\Models\Evento::all());
    // dd($request->name);
     //dd($request->all());
 
     //genera el envio de los datos recibidos desde el formulario a la base de datos
     $newEvento = new Evento();
+
+    if($request->hasfile('featured')){
+      $file = $request->file('featured');
+      $destinationPath = 'images/featured/';
+      $filename = time() . '-' . $file->getClientOriginalName();
+      $uploadSucces = $request->file('featured')->move($destinationPath,$filename);
+      $newEvento->featured = $destinationPath . $filename;
+
+    };
+    
     $newEvento->name = $request->name;
     $newEvento->date = $request->date;
     $newEvento->description = $request->description;

@@ -19,7 +19,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Masterclasses List</h3>
                 </div>
-            <!-- /.card-header -->
+            <!-- /.table-header -->
             <div class="card-body">
                 <table id="cursos" class="table table-bordered table-striped">
                     <thead>
@@ -30,11 +30,13 @@
                             <th>Description</th>
                             <th>Created_at</th>
                             <th>Updated_at</th>
+                            <th>Images</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
                         
                     </thead>
+                    <!-- /.table-content -->
                     <tbody>
                         @foreach($cursos as $curso)
                         <tr>
@@ -43,13 +45,15 @@
                             <td>{{$curso->start_date}}</td>
                             <td>{{$curso->description}}</td>
                             <td>{{$curso->created_at}}</td>
-                            <td>{{$curso->updaded_at}}</td>
+                            <td>{{$curso->updated_at}}</td>
+                            <td> <img src="{{asset($curso->featured)}}" alt="{{$curso->name}}" 
+                                class="img-fluid img-thumbnail" width="100px"></td>
                             <td>
                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" 
                                data-target="#modal-update-curso-{{$curso->id}}">Edit</button>
                             </td>
                             <td>
-                                <form action="{{ route('admin.cursos.delete', $curso->id) }}" method="POST">
+                                <form action="{{ route('admin.cursos.delete', $curso->id) }}" class="form_eliminar" method="POST">
                                     {{ csrf_field() }}
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm">Delete</button>
@@ -75,7 +79,7 @@
     <!-- /.row -->
 </div>
 
-<!-- modal -->
+<!-- modal create register -->
 <div class="modal fade" id="modal-create-curso">
     <div class="modal-dialog">
         <div class="modal-content bg-default">
@@ -85,15 +89,22 @@
                     <span aria-hidden="true">&times;</span></button>
                 </div>
 
-                <form action="{{ route('admin.cursos.store') }}" method="POST">
+                <form action="{{ route('admin.cursos.store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="modal-body">
                        <div class="form-group">
-                           <label for="name">Masterclass</label>
+                           <label for="name">Masterclass Name</label>
                            <input type="text" placeholder="Name of the masterclaa" name="name" class="form-control" id="curso">
+                          
+                           <label for="date">Masterclass's Date</label>
                            <input type="date" placeholder="Date" name="date" class="form-control" id="date">
+                          
+                           <label for="description">Masterclass Featured</label>
                            <textarea type="text" placeholder="Description" name="description" class="form-control" id="description"></textarea>
-                       </div>
+                          
+                           <label for="featured">Masterclass Image</label>
+                           <input type="file" placeholder="Upload Materclass image" name="featured" class="form-control" id="date">
+                        </div>
                     </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
@@ -111,12 +122,45 @@
 
 @endsection
 
+<!-- /.config datatable-->
 @section('js')
 <script>
 $(document).ready(function() {
     $('#cursos').DataTable( {
-        "order": [[ 3, "desc" ]]
+        "order": [[ 3, "desc" ]],
+        paging: true,
+        scrollX: 900
     } );
 } );
+</script>
+
+<!-- /config sweet alert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+    $('.form_eliminar').submit(function(e){
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+
+            this.submit()
+            Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+            )
+            }
+            })
+    });
+  
 </script>
 @stop
